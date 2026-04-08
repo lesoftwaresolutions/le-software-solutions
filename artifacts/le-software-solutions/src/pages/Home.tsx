@@ -235,28 +235,59 @@ export default function Home() {
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="group relative rounded-3xl overflow-hidden shadow-lg">
+            {/* LeCorn */}
+            <a
+              href="https://lecorn.co.uk/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative rounded-3xl overflow-hidden shadow-lg block"
+            >
               <img
                 src="/images/lecorn-case-study.jpg"
                 alt="LeCorn project"
                 className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent flex flex-col justify-end p-6">
-                <span className="text-cyan-400 text-xs font-semibold uppercase tracking-widest mb-1">Mobile App</span>
-                <h3 className="text-white text-xl font-extrabold">LeCorn</h3>
-                <p className="text-gray-300 text-sm mt-1">Next-Generation Mobile Apps Development</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/30 to-transparent" />
+              {/* Logo centre */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="bg-[#6b8e3e] rounded-2xl p-3 shadow-xl opacity-90 group-hover:scale-105 transition-transform">
+                  <img src="/images/lecorn-logo.png" alt="LeCorn logo" className="h-16 w-16 object-contain" />
+                </div>
               </div>
-            </div>
+              <div className="absolute inset-0 flex flex-col justify-end p-6">
+                <span className="text-cyan-400 text-xs font-semibold uppercase tracking-widest mb-1">Website & Branding</span>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h3 className="text-white text-xl font-extrabold">LeCorn</h3>
+                    <p className="text-gray-300 text-sm mt-0.5">Sweet. Crispy. Poppin.</p>
+                  </div>
+                  <span className="text-xs bg-green-500 text-white font-semibold px-2.5 py-1 rounded-full">Live ↗</span>
+                </div>
+              </div>
+            </a>
+            {/* LeCaffee */}
             <div className="group relative rounded-3xl overflow-hidden shadow-lg">
               <img
                 src="/images/lecaffee-case-study.jpg"
                 alt="LeCaffee project"
                 className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent flex flex-col justify-end p-6">
-                <span className="text-cyan-400 text-xs font-semibold uppercase tracking-widest mb-1">Branding</span>
-                <h3 className="text-white text-xl font-extrabold">LeCaffee</h3>
-                <p className="text-gray-300 text-sm mt-1">Creative Branding Solutions</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/30 to-transparent" />
+              {/* Logo centre */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="bg-[#1a3d2e] rounded-2xl p-3 shadow-xl opacity-90 group-hover:scale-105 transition-transform">
+                  <img src="/images/lecaffee-logo.png" alt="LeCaffee logo" className="h-16 w-16 object-contain" />
+                </div>
+              </div>
+              <div className="absolute inset-0 flex flex-col justify-end p-6">
+                <span className="text-cyan-400 text-xs font-semibold uppercase tracking-widest mb-1">Website & Branding</span>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h3 className="text-white text-xl font-extrabold">LeCaffee</h3>
+                    <p className="text-gray-300 text-sm mt-0.5">Coffee Shop</p>
+                  </div>
+                  <span className="text-xs bg-amber-500 text-white font-semibold px-2.5 py-1 rounded-full">In Progress</span>
+                </div>
               </div>
             </div>
           </div>

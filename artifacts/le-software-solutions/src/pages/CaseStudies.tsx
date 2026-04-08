@@ -7,6 +7,9 @@ const caseStudies = [
       "We designed and developed a complete website for LeCorn, a startup snack and street-food brand. The project included a visually appealing menu with UX-focused navigation, franchise information pages, and a fully integrated contact system. The branding was developed to reflect the energetic and modern personality of the brand.",
     tags: ["Website Design", "Menu UX", "Branding"],
     image: "/images/lecorn-case-study.jpg",
+    logo: "/images/lecorn-logo.png",
+    logoBg: "bg-[#6b8e3e]",
+    link: "https://lecorn.co.uk/",
     metrics: [
       { label: "Timeline", value: "4 weeks" },
       { label: "Pages", value: "12+" },
@@ -21,6 +24,9 @@ const caseStudies = [
       "LeCaffee is a coffee and takeaway concept that needed a website capable of showcasing their full-day menu — from morning pastries to evening specials. We built a scalable content system that allows easy updates to menu items, pricing, and seasonal offerings. The site was designed with SEO best practices from the ground up.",
     tags: ["Website Design", "Menu System", "SEO-ready"],
     image: "/images/lecaffee-case-study.jpg",
+    logo: "/images/lecaffee-logo.png",
+    logoBg: "bg-[#1a3d2e]",
+    link: null,
     metrics: [
       { label: "Timeline", value: "6 weeks" },
       { label: "Menu Items", value: "50+" },
@@ -66,14 +72,24 @@ export default function CaseStudies() {
                   <img
                     src={cs.image}
                     alt={cs.name}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover absolute inset-0"
                     style={{ minHeight: "240px" }}
                     onError={(e) => {
                       const el = e.target as HTMLImageElement;
                       el.style.display = "none";
                     }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/20" />
+                  {/* Logo overlay */}
+                  <div className="absolute inset-0 flex flex-col items-center justify-center p-6">
+                    <div className={`rounded-2xl p-4 mb-3 shadow-xl ${cs.logoBg}`}>
+                      <img
+                        src={cs.logo}
+                        alt={`${cs.name} logo`}
+                        className="h-20 w-20 object-contain"
+                      />
+                    </div>
+                  </div>
                   <div className="absolute bottom-4 left-4">
                     <span className="bg-white/90 backdrop-blur-sm font-bold text-gray-900 text-lg px-3 py-1 rounded-lg">
                       {cs.name}
@@ -109,12 +125,23 @@ export default function CaseStudies() {
                     ))}
                   </div>
 
-                  <button className="inline-flex items-center gap-2 border border-blue-600 text-blue-600 px-5 py-2.5 rounded-xl text-sm font-semibold hover:bg-blue-50 transition-colors">
-                    View Project
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                  </button>
+                  {cs.link ? (
+                    <a
+                      href={cs.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 border border-blue-600 text-blue-600 px-5 py-2.5 rounded-xl text-sm font-semibold hover:bg-blue-50 transition-colors"
+                    >
+                      View Project
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+                  ) : (
+                    <span className="inline-flex items-center gap-2 border border-gray-300 text-gray-400 px-5 py-2.5 rounded-xl text-sm font-semibold cursor-default">
+                      Coming Soon
+                    </span>
+                  )}
                 </div>
               </div>
             </div>
