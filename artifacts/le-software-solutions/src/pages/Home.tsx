@@ -247,19 +247,16 @@ export default function Home() {
                 alt="LeCorn project"
                 className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/30 to-transparent" />
-              {/* Logo centre */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="bg-[#6b8e3e] rounded-2xl p-3 shadow-xl opacity-90 group-hover:scale-105 transition-transform">
-                  <img src="/images/lecorn-logo.png" alt="LeCorn logo" className="h-16 w-16 object-contain" />
-                </div>
-              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/85 via-slate-900/20 to-transparent" />
               <div className="absolute inset-0 flex flex-col justify-end p-6">
-                <span className="text-cyan-400 text-xs font-semibold uppercase tracking-widest mb-1">Website & Branding</span>
+                <span className="text-cyan-400 text-xs font-semibold uppercase tracking-widest mb-2">Website & Branding</span>
                 <div className="flex items-center justify-between">
-                  <div>
-                    <h3 className="text-white text-xl font-extrabold">LeCorn</h3>
-                    <p className="text-gray-300 text-sm mt-0.5">Sweet. Crispy. Poppin.</p>
+                  <div className="flex items-center gap-2.5">
+                    <img src="/images/lecorn-logo.png" alt="LeCorn logo" className="h-9 w-9 rounded-lg object-cover shrink-0" />
+                    <div>
+                      <h3 className="text-white text-xl font-extrabold leading-tight">LeCorn</h3>
+                      <p className="text-gray-300 text-xs mt-0.5">Sweet. Crispy. Poppin.</p>
+                    </div>
                   </div>
                   <span className="text-xs bg-green-500 text-white font-semibold px-2.5 py-1 rounded-full">Live ↗</span>
                 </div>
@@ -272,19 +269,16 @@ export default function Home() {
                 alt="LeCaffee project"
                 className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/30 to-transparent" />
-              {/* Logo centre */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="bg-[#1a3d2e] rounded-2xl p-3 shadow-xl opacity-90 group-hover:scale-105 transition-transform">
-                  <img src="/images/lecaffee-logo.png" alt="LeCaffee logo" className="h-16 w-16 object-contain" />
-                </div>
-              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/85 via-slate-900/20 to-transparent" />
               <div className="absolute inset-0 flex flex-col justify-end p-6">
-                <span className="text-cyan-400 text-xs font-semibold uppercase tracking-widest mb-1">Website & Branding</span>
+                <span className="text-cyan-400 text-xs font-semibold uppercase tracking-widest mb-2">Website & Branding</span>
                 <div className="flex items-center justify-between">
-                  <div>
-                    <h3 className="text-white text-xl font-extrabold">LeCaffee</h3>
-                    <p className="text-gray-300 text-sm mt-0.5">Coffee Shop</p>
+                  <div className="flex items-center gap-2.5">
+                    <img src="/images/lecaffee-logo.png" alt="LeCaffee logo" className="h-9 w-9 rounded-lg object-cover shrink-0" />
+                    <div>
+                      <h3 className="text-white text-xl font-extrabold leading-tight">LeCaffee</h3>
+                      <p className="text-gray-300 text-xs mt-0.5">Coffee Shop</p>
+                    </div>
                   </div>
                   <span className="text-xs bg-amber-500 text-white font-semibold px-2.5 py-1 rounded-full">In Progress</span>
                 </div>

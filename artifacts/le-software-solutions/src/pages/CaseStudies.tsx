@@ -79,27 +79,17 @@ export default function CaseStudies() {
                       el.style.display = "none";
                     }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/20" />
-                  {/* Logo overlay */}
-                  <div className="absolute inset-0 flex flex-col items-center justify-center p-6">
-                    <div className={`rounded-2xl p-4 mb-3 shadow-xl ${cs.logoBg}`}>
-                      <img
-                        src={cs.logo}
-                        alt={`${cs.name} logo`}
-                        className="h-20 w-20 object-contain"
-                      />
-                    </div>
-                  </div>
-                  <div className="absolute bottom-4 left-4">
-                    <span className="bg-white/90 backdrop-blur-sm font-bold text-gray-900 text-lg px-3 py-1 rounded-lg">
-                      {cs.name}
-                    </span>
-                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-black/10" />
                 </div>
 
                 {/* Content panel */}
                 <div className="lg:col-span-3 p-8">
                   <div className="flex items-center gap-3 mb-4">
+                    <img
+                      src={cs.logo}
+                      alt={`${cs.name} logo`}
+                      className="h-10 w-10 rounded-lg object-cover shrink-0"
+                    />
                     <h2 className="text-2xl font-extrabold text-gray-900">{cs.name}</h2>
                     <span className={`text-xs font-semibold px-3 py-1 rounded-full ${cs.statusColor}`}>
                       {cs.status}
