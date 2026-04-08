@@ -187,14 +187,13 @@ export default function About() {
 
           <div className="flex justify-center">
             <div className="bg-white rounded-3xl border border-gray-100 shadow-lg overflow-hidden max-w-sm w-full">
-              {/* Photo placeholder */}
-              <div className="w-full h-72 bg-gradient-to-br from-slate-800 to-slate-900 flex flex-col items-center justify-center">
-                <div className="w-28 h-28 rounded-full border-4 border-cyan-400/40 bg-slate-700 flex items-center justify-center mb-3 overflow-hidden">
-                  <svg className="w-16 h-16 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                  </svg>
-                </div>
-                <span className="text-slate-500 text-xs">Photo coming soon</span>
+              {/* Founder photo */}
+              <div className="w-full h-72 bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center overflow-hidden">
+                <img
+                  src="/images/charan-photo.png"
+                  alt="Charan — Founder & CEO"
+                  className="w-full h-full object-cover object-top"
+                />
               </div>
               <div className="p-6 text-center">
                 <h3 className="text-xl font-extrabold text-gray-900">Charan</h3>
