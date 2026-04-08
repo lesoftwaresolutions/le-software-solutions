@@ -9,7 +9,7 @@ const contactInfo = [
       </svg>
     ),
     label: "Office",
-    value: "Hastings, East Sussex, United Kingdom",
+    value: "1 Stockleight Road, Flat 3, St Leonards on Sea, TN38 0JP, East Sussex, UK",
   },
   {
     icon: (
