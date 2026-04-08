@@ -15,8 +15,7 @@ const products = [
       "Aluminium construction",
       "Non-slip silicone pads",
     ],
-    icon: "💻",
-    bgColor: "bg-slate-50",
+    image: "/images/laptop-stand.jpg",
   },
   {
     id: 2,
@@ -30,8 +29,7 @@ const products = [
       "USB-C support",
       "Fast charging 18W PD",
     ],
-    icon: "🔋",
-    bgColor: "bg-blue-50",
+    image: "/images/power-bank.jpg",
   },
   {
     id: 3,
@@ -45,8 +43,7 @@ const products = [
       "Two-way audio",
       "Motion detection alerts",
     ],
-    icon: "🔔",
-    bgColor: "bg-indigo-50",
+    image: "/images/smart-doorbell.jpg",
   },
   {
     id: 4,
@@ -60,38 +57,7 @@ const products = [
       "360° pan & tilt",
       "AI person detection",
     ],
-    icon: "📷",
-    bgColor: "bg-purple-50",
-  },
-  {
-    id: 5,
-    name: "Wireless Keyboard",
-    description: "Ultra-slim Bluetooth keyboard with multi-device pairing, backlit keys, and long battery life. Works seamlessly across Mac, Windows, and mobile devices.",
-    price: "£49.99",
-    category: "Accessories",
-    rating: 4.7,
-    features: [
-      "Multi-device pairing",
-      "Backlit keys",
-      "Long battery life",
-    ],
-    icon: "⌨️",
-    bgColor: "bg-gray-50",
-  },
-  {
-    id: 6,
-    name: "Smart LED Bulbs (4-Pack)",
-    description: "16 million colour WiFi smart LED bulbs compatible with Alexa and Google Home. Schedule, dim, and colour-match from your smartphone or by voice control.",
-    price: "£24.99",
-    category: "Smart Home",
-    rating: 4.6,
-    features: [
-      "16M colours",
-      "Alexa & Google compatible",
-      "Scheduling & scenes",
-    ],
-    icon: "💡",
-    bgColor: "bg-yellow-50",
+    image: "/images/security-camera.jpg",
   },
 ];
 
@@ -100,6 +66,7 @@ export default function Shop() {
 
   return (
     <main>
+      {/* Hero */}
       <section className="bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl lg:text-5xl font-extrabold mb-3">Shop</h1>
@@ -108,9 +75,10 @@ export default function Shop() {
       </section>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="flex items-center justify-between mb-8">
+        {/* Toolbar */}
+        <div className="flex items-center justify-between mb-8 pb-4 border-b border-gray-100">
           <div>
-            <span className="text-sm text-gray-500 font-medium">All Products</span>
+            <h2 className="text-base font-semibold text-gray-800">All Products</h2>
             <p className="text-gray-400 text-xs mt-0.5">{products.length} products available</p>
           </div>
           <button
@@ -124,7 +92,8 @@ export default function Shop() {
           </button>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {/* Product grid — 4 columns on large screens, matching the PDF */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {products.map((product) => (
             <ProductCard
               key={product.id}
@@ -134,6 +103,7 @@ export default function Shop() {
           ))}
         </div>
 
+        {/* Bottom CTA */}
         <div className="mt-16 bg-blue-50 border border-blue-100 rounded-2xl p-8 text-center">
           <div className="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
             <svg className="w-7 h-7 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">

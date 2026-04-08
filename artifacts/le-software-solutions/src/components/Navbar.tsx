@@ -19,17 +19,23 @@ export default function Navbar() {
     <nav className="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-9 h-9 rounded-lg bg-blue-600 flex items-center justify-center">
-              <span className="text-white font-bold text-lg leading-none">L</span>
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-2.5 group select-none">
+            {/* Icon mark */}
+            <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center shadow-sm">
+              <svg viewBox="0 0 36 36" className="w-6 h-6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <text x="5" y="26" fontSize="22" fontWeight="700" fill="white" fontFamily="Arial, sans-serif">L</text>
+              </svg>
             </div>
-            <div className="leading-tight">
-              <div className="font-bold text-gray-900 text-sm">Le Software</div>
-              <div className="font-bold text-gray-900 text-sm -mt-0.5">Solutions</div>
+            {/* Text */}
+            <div className="leading-none">
+              <div className="font-bold text-gray-900 text-[13px] tracking-tight">Le Software</div>
+              <div className="font-bold text-blue-600 text-[13px] tracking-tight -mt-px">Solutions</div>
             </div>
           </Link>
 
-          <div className="hidden md:flex items-center gap-1">
+          {/* Desktop nav */}
+          <div className="hidden md:flex items-center gap-0.5">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -45,15 +51,17 @@ export default function Navbar() {
             ))}
           </div>
 
+          {/* Get Started */}
           <div className="hidden md:block">
             <Link
               href="/contact"
-              className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700 transition-colors duration-150"
+              className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700 transition-colors duration-150 shadow-sm"
             >
               Get Started
             </Link>
           </div>
 
+          {/* Hamburger */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="md:hidden p-2 rounded-md text-gray-600 hover:bg-gray-100"
@@ -69,6 +77,7 @@ export default function Navbar() {
           </button>
         </div>
 
+        {/* Mobile menu */}
         {menuOpen && (
           <div className="md:hidden border-t border-gray-100 py-2">
             {navLinks.map((link) => (

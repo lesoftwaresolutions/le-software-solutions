@@ -1,0 +1,32 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "F8GZhXlKEynBXLCIQ6rLX"
+uri = "file://attached_assets/stock_images/power-bank.jpg"
+type = "image"
+title = "portable power bank charger battery pack electronics"
+
+[[outputs]]
+id = "Qws_4G93_homQQiQVaLVq"
+uri = "file://attached_assets/stock_images/smart-doorbell.jpg"
+type = "image"
+title = "smart video doorbell wifi home security device"
+
+[[outputs]]
+id = "tdIG1kB2smkNJnWoz-pn6"
+uri = "file://attached_assets/stock_images/security-camera.jpg"
+type = "image"
+title = "indoor security camera smart home surveillance wifi"
+
+[[outputs]]
+id = "fDMynKPU5oYD0rd0Oti5L"
+uri = "file://attached_assets/stock_images/lecaffee-case-study.jpg"
+type = "image"
+title = "coffee shop cafe interior cozy modern takeaway"
+
+[[outputs]]
+id = "vEUYoERudmCNQ5EnuaWId"
+uri = "file://attached_assets/stock_images/lecorn-case-study.jpg"
+type = "image"
+title = "street food snack restaurant corn brand colorful energetic"

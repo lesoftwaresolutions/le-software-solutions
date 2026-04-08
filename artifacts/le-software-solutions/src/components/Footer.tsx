@@ -5,14 +5,17 @@ export default function Footer() {
     <footer className="bg-gray-900 text-gray-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+          {/* Brand */}
           <div className="md:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-9 h-9 rounded-lg bg-blue-600 flex items-center justify-center">
-                <span className="text-white font-bold text-lg">L</span>
+            <div className="flex items-center gap-2.5 mb-5">
+              <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center shadow-sm">
+                <svg viewBox="0 0 36 36" className="w-6 h-6" fill="none">
+                  <text x="5" y="26" fontSize="22" fontWeight="700" fill="white" fontFamily="Arial, sans-serif">L</text>
+                </svg>
               </div>
-              <div className="leading-tight">
-                <div className="font-bold text-white text-sm">Le Software</div>
-                <div className="font-bold text-white text-sm -mt-0.5">Solutions</div>
+              <div className="leading-none">
+                <div className="font-bold text-white text-[13px] tracking-tight">Le Software</div>
+                <div className="font-bold text-blue-400 text-[13px] tracking-tight -mt-px">Solutions</div>
               </div>
             </div>
             <p className="text-sm text-gray-400 leading-relaxed">
@@ -22,6 +25,7 @@ export default function Footer() {
             </p>
           </div>
 
+          {/* Quick Links */}
           <div>
             <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Quick Links</h4>
             <ul className="space-y-2.5">
@@ -41,6 +45,7 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* Services */}
           <div>
             <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Services</h4>
             <ul className="space-y-2.5">
@@ -52,6 +57,7 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* Contact */}
           <div>
             <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Contact Us</h4>
             <div className="space-y-3 text-sm text-gray-400">
@@ -66,7 +72,7 @@ export default function Footer() {
                 <svg className="w-4 h-4 text-blue-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                <a href="mailto:info@lesoftwaresolutions.com" className="hover:text-white transition-colors">
+                <a href="mailto:info@lesoftwaresolutions.com" className="hover:text-white transition-colors break-all">
                   info@lesoftwaresolutions.com
                 </a>
               </div>
@@ -76,8 +82,8 @@ export default function Footer() {
                 </svg>
                 <a href="tel:+447393454245" className="hover:text-white transition-colors">+44 7393 454245</a>
               </div>
-              <div className="flex items-center gap-2">
-                <svg className="w-4 h-4 text-blue-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="flex items-start gap-2">
+                <svg className="w-4 h-4 mt-0.5 text-blue-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                 <span>Monday - Friday, 8:00 a.m. - 5:00 p.m.</span>
@@ -86,6 +92,7 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Bottom bar */}
         <div className="mt-12 pt-8 border-t border-gray-800 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-sm text-gray-500">© 2026 Le Software Solutions. All rights reserved.</p>
           <div className="flex gap-6">
