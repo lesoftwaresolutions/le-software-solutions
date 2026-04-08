@@ -18,16 +18,16 @@ export default function Navbar() {
   return (
     <nav className="bg-slate-900 sticky top-0 z-50 border-b border-slate-800 shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
 
           {/* Logo — icon + one-line text */}
-          <Link href="/" className="flex items-center gap-2.5 group select-none shrink-0">
+          <Link href="/" className="flex items-center gap-3 group select-none shrink-0">
             <img
               src="/images/logo.png"
               alt="Le Software Solutions logo"
-              className="h-9 w-9 rounded-lg object-cover"
+              className="h-14 w-14 rounded-xl object-cover"
             />
-            <span className="text-white font-bold text-base tracking-tight whitespace-nowrap group-hover:text-cyan-400 transition-colors">
+            <span className="text-white font-bold text-lg tracking-tight whitespace-nowrap group-hover:text-cyan-400 transition-colors">
               Le Software Solutions
             </span>
           </Link>
