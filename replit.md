@@ -24,4 +24,19 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 - `pnpm --filter @workspace/db run push` — push DB schema changes (dev only)
 - `pnpm --filter @workspace/api-server run dev` — run API server locally
 
+## Artifacts
+
+### LE Software Solutions (`artifacts/le-software-solutions`)
+- **Type**: React + Vite static website (no backend)
+- **Preview path**: `/`
+- **Pages**: Home, About Us, What We Do (Services), Case Studies, Shop, Pricing, Contact
+- **Tech**: React functional components, Tailwind CSS, Wouter router
+- **Key components**:
+  - `Navbar.tsx` — sticky top nav with mobile hamburger
+  - `Footer.tsx` — 4-column footer with company info
+  - `ProductCard.tsx` — shop product card with hover effects
+  - `ModalPopup.tsx` — animated "coming soon" modal for Buy Now clicks
+- **Shop**: 6 products displayed in grid; Buy Now/Add to Cart triggers modal
+- **Modal**: backdrop blur, smooth scale animation, ESC key close, click-outside close
+
 See the `pnpm-workspace` skill for workspace structure, TypeScript setup, and package details.

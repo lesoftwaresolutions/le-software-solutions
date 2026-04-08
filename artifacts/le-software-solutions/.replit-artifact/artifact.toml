@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "LE Software Solutions"
+version = "1.0.0"
+id = "artifacts/le-software-solutions"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24807
+
+[services.development]
+run = "pnpm --filter @workspace/le-software-solutions run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/le-software-solutions", "run", "build" ]
+publicDir = "artifacts/le-software-solutions/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24807"
+BASE_PATH = "/"
