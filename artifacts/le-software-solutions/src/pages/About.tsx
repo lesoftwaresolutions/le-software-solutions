@@ -70,31 +70,33 @@ export default function About() {
               </p>
               <div className="flex gap-6">
                 <div>
-                  <div className="text-3xl font-extrabold text-blue-600">50+</div>
+                  <div className="text-3xl font-extrabold text-cyan-500">50+</div>
                   <div className="text-gray-500 text-sm mt-1">Projects Delivered</div>
                 </div>
                 <div className="w-px bg-gray-200" />
                 <div>
-                  <div className="text-3xl font-extrabold text-blue-600">30+</div>
+                  <div className="text-3xl font-extrabold text-cyan-500">30+</div>
                   <div className="text-gray-500 text-sm mt-1">Happy Clients</div>
                 </div>
                 <div className="w-px bg-gray-200" />
                 <div>
-                  <div className="text-3xl font-extrabold text-blue-600">5+</div>
+                  <div className="text-3xl font-extrabold text-cyan-500">5+</div>
                   <div className="text-gray-500 text-sm mt-1">Years Experience</div>
                 </div>
               </div>
             </div>
-            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl p-10 flex items-center justify-center">
+            <div className="bg-slate-900 rounded-3xl p-10 flex items-center justify-center shadow-xl">
               <div className="text-center">
-                <div className="w-24 h-24 bg-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <span className="text-white font-extrabold text-4xl">L</span>
-                </div>
-                <div className="font-bold text-2xl text-gray-900">Le Software Solutions</div>
-                <div className="text-gray-500 mt-2">Hastings, East Sussex, UK</div>
+                <img
+                  src="/images/logo.png"
+                  alt="Le Software Solutions"
+                  className="w-28 h-28 rounded-2xl object-cover mx-auto mb-6 shadow-lg shadow-cyan-500/20"
+                />
+                <div className="font-bold text-2xl text-white">Le Software Solutions</div>
+                <div className="text-slate-400 mt-2">Hastings, East Sussex, UK</div>
                 <div className="mt-6 flex flex-wrap gap-2 justify-center">
                   {["SaaS", "Web Dev", "Digital Marketing", "SEO", "Analytics", "Branding"].map((tag) => (
-                    <span key={tag} className="bg-blue-100 text-blue-700 text-xs font-medium px-3 py-1 rounded-full">{tag}</span>
+                    <span key={tag} className="bg-slate-800 text-cyan-400 text-xs font-medium px-3 py-1 rounded-full border border-slate-700">{tag}</span>
                   ))}
                 </div>
               </div>

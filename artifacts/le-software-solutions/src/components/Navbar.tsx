@@ -16,22 +16,20 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
+    <nav className="bg-slate-900 sticky top-0 z-50 border-b border-slate-800 shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 group select-none">
-            {/* Icon mark */}
-            <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center shadow-sm">
-              <svg viewBox="0 0 36 36" className="w-6 h-6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <text x="5" y="26" fontSize="22" fontWeight="700" fill="white" fontFamily="Arial, sans-serif">L</text>
-              </svg>
-            </div>
-            {/* Text */}
-            <div className="leading-none">
-              <div className="font-bold text-gray-900 text-[13px] tracking-tight">Le Software</div>
-              <div className="font-bold text-blue-600 text-[13px] tracking-tight -mt-px">Solutions</div>
-            </div>
+
+          {/* Logo — icon + one-line text */}
+          <Link href="/" className="flex items-center gap-2.5 group select-none shrink-0">
+            <img
+              src="/images/logo.png"
+              alt="Le Software Solutions logo"
+              className="h-9 w-9 rounded-lg object-cover"
+            />
+            <span className="text-white font-bold text-base tracking-tight whitespace-nowrap group-hover:text-cyan-400 transition-colors">
+              Le Software Solutions
+            </span>
           </Link>
 
           {/* Desktop nav */}
@@ -42,8 +40,8 @@ export default function Navbar() {
                 href={link.href}
                 className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-150 ${
                   location === link.href
-                    ? "text-blue-600 bg-blue-50"
-                    : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+                    ? "text-cyan-400 bg-slate-800"
+                    : "text-slate-300 hover:text-white hover:bg-slate-800"
                 }`}
               >
                 {link.label}
@@ -52,10 +50,10 @@ export default function Navbar() {
           </div>
 
           {/* Get Started */}
-          <div className="hidden md:block">
+          <div className="hidden md:block shrink-0">
             <Link
               href="/contact"
-              className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700 transition-colors duration-150 shadow-sm"
+              className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-500 transition-colors duration-150 shadow"
             >
               Get Started
             </Link>
@@ -64,7 +62,7 @@ export default function Navbar() {
           {/* Hamburger */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden p-2 rounded-md text-gray-600 hover:bg-gray-100"
+            className="md:hidden p-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors"
             aria-label="Toggle menu"
           >
             <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -79,7 +77,7 @@ export default function Navbar() {
 
         {/* Mobile menu */}
         {menuOpen && (
-          <div className="md:hidden border-t border-gray-100 py-2">
+          <div className="md:hidden border-t border-slate-800 py-2">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -87,8 +85,8 @@ export default function Navbar() {
                 onClick={() => setMenuOpen(false)}
                 className={`block px-4 py-2.5 text-sm font-medium transition-colors ${
                   location === link.href
-                    ? "text-blue-600 bg-blue-50"
-                    : "text-gray-700 hover:bg-gray-50"
+                    ? "text-cyan-400 bg-slate-800"
+                    : "text-slate-300 hover:text-white hover:bg-slate-800"
                 }`}
               >
                 {link.label}
@@ -98,7 +96,7 @@ export default function Navbar() {
               <Link
                 href="/contact"
                 onClick={() => setMenuOpen(false)}
-                className="block w-full text-center bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700 transition-colors"
+                className="block w-full text-center bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-500 transition-colors"
               >
                 Get Started
               </Link>
