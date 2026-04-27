@@ -263,7 +263,7 @@ export default function Home() {
               </div>
             </a>
             {/* LeCaffee */}
-            <div className="group relative rounded-3xl overflow-hidden shadow-lg">
+            <a href="https://www.lecaffee.co.uk" target="_blank" rel="noopener noreferrer" className="group relative rounded-3xl overflow-hidden shadow-lg block">
               <img
                 src="/images/lecaffee-case-study.jpg"
                 alt="LeCaffee project"
@@ -280,10 +280,10 @@ export default function Home() {
                       <p className="text-gray-300 text-xs mt-0.5">Coffee Shop</p>
                     </div>
                   </div>
-                  <span className="text-xs bg-amber-500 text-white font-semibold px-2.5 py-1 rounded-full">In Progress</span>
+                  <span className="text-xs bg-green-500 text-white font-semibold px-2.5 py-1 rounded-full">Live ↗</span>
                 </div>
               </div>
-            </div>
+            </a>
           </div>
           <div className="text-center mt-8">
             <Link

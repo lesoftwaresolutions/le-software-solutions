@@ -8,7 +8,8 @@ const caseStudies = [
     tags: ["Website Design", "Menu UX", "Branding"],
     image: "/images/lecorn-case-study.jpg",
     logo: "/images/lecorn-logo.png",
-    logoBg: "bg-[#6b8e3e]",
+    logoText: null,
+    logoColor: "bg-[#6b8e3e]",
     link: "https://lecorn.co.uk/",
     metrics: [
       { label: "Timeline", value: "4 weeks" },
@@ -18,19 +19,38 @@ const caseStudies = [
   },
   {
     name: "LeCaffee",
-    status: "In Progress",
-    statusColor: "bg-amber-100 text-amber-700 border border-amber-200",
+    status: "Live",
+    statusColor: "bg-green-100 text-green-700 border border-green-200",
     description:
       "LeCaffee is a coffee and takeaway concept that needed a website capable of showcasing their full-day menu — from morning pastries to evening specials. We built a scalable content system that allows easy updates to menu items, pricing, and seasonal offerings. The site was designed with SEO best practices from the ground up.",
     tags: ["Website Design", "Menu System", "SEO-ready"],
     image: "/images/lecaffee-case-study.jpg",
     logo: "/images/lecaffee-logo.png",
-    logoBg: "bg-[#1a3d2e]",
-    link: null,
+    logoText: null,
+    logoColor: "bg-[#1a3d2e]",
+    link: "https://www.lecaffee.co.uk",
     metrics: [
       { label: "Timeline", value: "6 weeks" },
       { label: "Menu Items", value: "50+" },
       { label: "SEO Ready", value: "Yes" },
+    ],
+  },
+  {
+    name: "Senlac Guest House",
+    status: "Live",
+    statusColor: "bg-green-100 text-green-700 border border-green-200",
+    description:
+      "Senlac Guest House is an affordable and stylish bed & breakfast ideally located in the heart of Hastings, East Sussex. We designed and developed a modern, welcoming website that showcases their room options — including single, double, and family rooms — along with their freshly cooked breakfast offerings and competitive pricing. The site was built to attract both leisure and business travellers, with clear navigation, booking information, and local area highlights to drive direct enquiries.",
+    tags: ["Website Design", "Hospitality", "Local SEO"],
+    image: "/images/senlac-case-study.jpg",
+    logo: null,
+    logoText: "SG",
+    logoColor: "bg-[#8B6914]",
+    link: "https://www.senlacguesthouses.co.uk",
+    metrics: [
+      { label: "Timeline", value: "3 weeks" },
+      { label: "Room Types", value: "3+" },
+      { label: "Mobile First", value: "Yes" },
     ],
   },
 ];
@@ -85,11 +105,17 @@ export default function CaseStudies() {
                 {/* Content panel */}
                 <div className="lg:col-span-3 p-8">
                   <div className="flex items-center gap-3 mb-4">
-                    <img
-                      src={cs.logo}
-                      alt={`${cs.name} logo`}
-                      className="h-10 w-10 rounded-lg object-cover shrink-0"
-                    />
+                    {cs.logo ? (
+                      <img
+                        src={cs.logo}
+                        alt={`${cs.name} logo`}
+                        className="h-10 w-10 rounded-lg object-cover shrink-0"
+                      />
+                    ) : (
+                      <div className={`h-10 w-10 rounded-lg shrink-0 flex items-center justify-center text-white font-bold text-sm ${cs.logoColor}`}>
+                        {cs.logoText}
+                      </div>
+                    )}
                     <h2 className="text-2xl font-extrabold text-gray-900">{cs.name}</h2>
                     <span className={`text-xs font-semibold px-3 py-1 rounded-full ${cs.statusColor}`}>
                       {cs.status}
