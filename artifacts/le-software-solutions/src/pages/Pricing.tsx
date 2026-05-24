@@ -1,6 +1,7 @@
 import { Link } from "wouter";
+import { useState } from "react";
 
-const plans = [
+const agencyPlans = [
   {
     name: "Basic",
     price: "£99",
@@ -50,6 +51,51 @@ const plans = [
   },
 ];
 
+const lehrPlans = [
+  {
+    name: "Micro",
+    staffRange: "1–5 Employees",
+    price: "£15",
+    period: "/month",
+    recommended: false,
+    features: [
+      "Digital Rota Builder",
+      "Real-time Clock-in / Clock-out",
+      "Staff Profiles & Contracts",
+      "WhatsApp Rota Export",
+      "Email Support",
+    ],
+  },
+  {
+    name: "Growth",
+    staffRange: "6–15 Employees",
+    price: "£29",
+    period: "/month",
+    recommended: true,
+    features: [
+      "Everything in Micro +",
+      "Advanced Shift Management",
+      "Leave & Absence Tracking",
+      "Manager Dashboard",
+      "Priority Support",
+    ],
+  },
+  {
+    name: "Professional",
+    staffRange: "16–30 Employees",
+    price: "£59",
+    period: "/month",
+    recommended: false,
+    features: [
+      "Everything in Growth +",
+      "Multi-location Support",
+      "Payroll Export Ready",
+      "Custom Reporting",
+      "Dedicated Account Manager",
+    ],
+  },
+];
+
 const faqs = [
   {
     q: "Can I change my plan at any time?",
@@ -67,22 +113,36 @@ const faqs = [
     q: "Do you offer custom plans?",
     a: "Yes! If your needs don't fit neatly into our packages, contact us and we'll create a bespoke solution.",
   },
+  {
+    q: "Can I cancel my LEHR subscription?",
+    a: "Yes. LEHR subscriptions can be cancelled at any time directly through your account dashboard. You'll retain access until the end of your current billing period.",
+  },
 ];
 
 export default function Pricing() {
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
   return (
     <main>
       <section className="bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="text-blue-400 font-semibold text-sm uppercase tracking-widest">PRICING & PLANS</span>
           <h1 className="text-4xl lg:text-5xl font-extrabold mt-3">Simple Plans, Powerful Value</h1>
+          <p className="text-gray-300 mt-4 max-w-2xl mx-auto">
+            Whether you need ongoing website support or smart staff management software, we have a plan that fits your business.
+          </p>
         </div>
       </section>
 
+      {/* Agency Plans */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl font-extrabold text-gray-900">Website & Digital Services</h2>
+            <p className="text-gray-500 mt-2 text-sm">Monthly retainer plans for ongoing website management and growth.</p>
+          </div>
           <div className="grid md:grid-cols-3 gap-6 items-stretch">
-            {plans.map((plan) => (
+            {agencyPlans.map((plan) => (
               <div
                 key={plan.name}
                 className={`bg-white rounded-2xl border-2 ${plan.color} shadow-sm flex flex-col ${plan.popular ? "shadow-blue-100 shadow-lg scale-[1.02]" : ""} relative`}
@@ -94,7 +154,6 @@ export default function Pricing() {
                     </span>
                   </div>
                 )}
-
                 <div className="p-8 pb-6">
                   <div className="mb-4">
                     <div className="text-3xl font-extrabold text-gray-900 inline-flex items-end gap-0.5">
@@ -115,7 +174,6 @@ export default function Pricing() {
                     ))}
                   </ul>
                 </div>
-
                 <div className="p-8 pt-4 mt-auto">
                   <Link
                     href="/contact"
@@ -127,21 +185,121 @@ export default function Pricing() {
               </div>
             ))}
           </div>
-
           <p className="text-center text-gray-500 text-sm mt-6">
             All plans include a free initial consultation. No long-term contracts required.
           </p>
         </div>
       </section>
 
+      {/* LEHR SaaS Plans */}
       <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <img src="/images/lehr-logo.png" alt="LEHR logo" className="h-12 w-12 object-contain" />
+              <span className="text-2xl font-extrabold text-gray-900">LEHR — Staff Management Software</span>
+            </div>
+            <p className="text-gray-500 max-w-xl mx-auto text-sm">
+              AI-powered HR and Rota management for UK SMEs. Pick the plan that matches your team size.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 items-stretch">
+            {lehrPlans.map((plan) => (
+              <div
+                key={plan.name}
+                className={`rounded-2xl flex flex-col relative border-2 transition-all ${
+                  plan.recommended
+                    ? "border-blue-600 shadow-xl shadow-blue-100 scale-[1.02] bg-gradient-to-b from-blue-600 to-blue-700 text-white"
+                    : "border-gray-200 bg-white shadow-sm"
+                }`}
+              >
+                {plan.recommended && (
+                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
+                    <span className="bg-white text-blue-600 text-xs font-bold px-4 py-1.5 rounded-full shadow">
+                      Recommended
+                    </span>
+                  </div>
+                )}
+                <div className="p-8 pb-4">
+                  <p className={`text-xs font-semibold uppercase tracking-widest mb-2 ${plan.recommended ? "text-blue-200" : "text-blue-500"}`}>
+                    {plan.staffRange}
+                  </p>
+                  <h3 className={`text-2xl font-extrabold mb-1 ${plan.recommended ? "text-white" : "text-gray-900"}`}>
+                    {plan.name}
+                  </h3>
+                  <div className={`text-4xl font-extrabold mt-3 mb-1 ${plan.recommended ? "text-white" : "text-gray-900"}`}>
+                    {plan.price}
+                    <span className={`text-base font-semibold ml-1 ${plan.recommended ? "text-blue-200" : "text-gray-500"}`}>
+                      {plan.period}
+                    </span>
+                  </div>
+                  <ul className="mt-6 space-y-3">
+                    {plan.features.map((f) => (
+                      <li key={f} className="flex items-start gap-2.5 text-sm">
+                        <svg
+                          className={`w-4 h-4 shrink-0 mt-0.5 ${plan.recommended ? "text-blue-200" : "text-blue-500"}`}
+                          fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className={plan.recommended ? "text-blue-100" : "text-gray-600"}>{f}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="p-8 pt-4 mt-auto space-y-3">
+                  <a
+                    href="#"
+                    className={`block w-full text-center py-3 px-6 rounded-xl font-semibold transition-all duration-150 ${
+                      plan.recommended
+                        ? "bg-white text-blue-700 hover:bg-blue-50"
+                        : "bg-blue-600 text-white hover:bg-blue-700"
+                    }`}
+                  >
+                    Get Started
+                  </a>
+                  <p className={`text-xs text-center flex items-center justify-center gap-1 ${plan.recommended ? "text-blue-200" : "text-gray-400"}`}>
+                    <svg className="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    </svg>
+                    Secure payments via Stripe
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <p className="text-center text-gray-500 text-sm mt-6">
+            Cancel anytime from your account dashboard. No long-term commitment required.
+          </p>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20 bg-gray-50">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-12">Frequently Asked Questions</h2>
-          <div className="space-y-6">
-            {faqs.map((faq) => (
-              <div key={faq.q} className="bg-gray-50 rounded-2xl p-6">
-                <h4 className="font-semibold text-gray-900 mb-2">{faq.q}</h4>
-                <p className="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
+          <div className="space-y-3">
+            {faqs.map((faq, i) => (
+              <div key={faq.q} className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+                <button
+                  className="w-full flex items-center justify-between px-6 py-5 text-left"
+                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                >
+                  <span className="font-semibold text-gray-900 text-sm">{faq.q}</span>
+                  <svg
+                    className={`w-4 h-4 text-gray-400 shrink-0 transition-transform ${openFaq === i ? "rotate-180" : ""}`}
+                    fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                {openFaq === i && (
+                  <div className="px-6 pb-5">
+                    <p className="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
+                  </div>
+                )}
               </div>
             ))}
           </div>

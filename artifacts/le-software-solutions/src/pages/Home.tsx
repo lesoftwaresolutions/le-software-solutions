@@ -354,6 +354,83 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Our Products — LEHR */}
+      <section className="py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <span className="text-blue-600 font-semibold text-sm uppercase tracking-widest">OUR PRODUCTS</span>
+            <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mt-3">
+              Built In-House. Designed for UK Businesses.
+            </h2>
+            <p className="text-gray-500 mt-4 max-w-xl mx-auto">
+              Alongside our agency services, we build our own software products to solve real problems for small and medium businesses.
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white rounded-3xl border border-gray-100 shadow-lg overflow-hidden">
+              <div className="grid lg:grid-cols-2 gap-0">
+                {/* Left — brand panel */}
+                <div className="bg-gradient-to-br from-blue-600 to-indigo-700 p-10 flex flex-col justify-center items-center text-center">
+                  <div className="bg-white rounded-2xl p-5 shadow-lg mb-6 w-28 h-28 flex items-center justify-center">
+                    <img src="/images/lehr-logo.png" alt="LEHR logo" className="w-20 h-20 object-contain" />
+                  </div>
+                  <h3 className="text-3xl font-extrabold text-white mb-1">LEHR</h3>
+                  <p className="text-blue-200 text-sm font-medium uppercase tracking-widest">Manage Staff</p>
+                  <div className="flex gap-2 mt-4 flex-wrap justify-center">
+                    <span className="bg-white/20 text-white text-xs font-medium px-3 py-1 rounded-full">AI-Powered</span>
+                    <span className="bg-white/20 text-white text-xs font-medium px-3 py-1 rounded-full">UK SMEs</span>
+                    <span className="bg-white/20 text-white text-xs font-medium px-3 py-1 rounded-full">SaaS</span>
+                  </div>
+                </div>
+
+                {/* Right — content */}
+                <div className="p-10 flex flex-col justify-center">
+                  <h4 className="text-2xl font-extrabold text-gray-900 mb-3">
+                    Introducing LEHR:<br />Smart Staff Management
+                  </h4>
+                  <p className="text-gray-600 leading-relaxed mb-6 text-sm">
+                    LEHR is an AI-powered HR and Rota management tool designed for UK SMEs. Simplify your shift planning, track employee clock-ins in real-time, and manage your team with ease.
+                  </p>
+                  <ul className="space-y-2.5 mb-8">
+                    {[
+                      "Digital Rota & Shift Planning",
+                      "Real-time Clock-in / Clock-out",
+                      "WhatsApp Rota Export",
+                      "Leave & Absence Management",
+                    ].map((feature) => (
+                      <li key={feature} className="flex items-center gap-2.5 text-sm text-gray-700">
+                        <svg className="w-4 h-4 text-blue-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                        </svg>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <a
+                      href="#"
+                      className="inline-flex items-center justify-center gap-2 bg-blue-600 text-white font-semibold px-6 py-3 rounded-xl hover:bg-blue-700 transition-colors text-sm"
+                    >
+                      Get Started — From £15/mo
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+                    <a
+                      href="/pricing"
+                      className="inline-flex items-center justify-center gap-2 border border-blue-600 text-blue-600 font-semibold px-6 py-3 rounded-xl hover:bg-blue-50 transition-colors text-sm"
+                    >
+                      View Pricing
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-24 bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

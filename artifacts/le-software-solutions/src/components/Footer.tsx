@@ -30,10 +30,9 @@ export default function Footer() {
             <ul className="space-y-2.5">
               {[
                 { label: "About Us", href: "/about" },
-                { label: "Policy", href: "#" },
-                { label: "Terms and Conditions", href: "#" },
-                { label: "Career", href: "#" },
-                { label: "Blog", href: "#" },
+                { label: "Privacy Policy", href: "/privacy-policy" },
+                { label: "Terms and Conditions", href: "/terms-and-conditions" },
+                { label: "Refund & Cancellation Policy", href: "/refund-policy" },
                 { label: "Contact Us", href: "/contact" },
               ].map((l) => (
                 <li key={l.label}>
@@ -73,7 +72,7 @@ export default function Footer() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-                <span>1 Stockleight Road, Flat 3,<br />St Leonards on Sea,<br />TN38 0JP, East Sussex, UK</span>
+                <span>Flat 3, 1 Stockleight Road,<br />St Leonards on Sea,<br />East Sussex, TN37 6DJ, UK</span>
               </div>
               <div className="flex items-start gap-2">
                 <svg className="w-4 h-4 mt-0.5 text-cyan-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -101,10 +100,14 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-12 pt-8 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-slate-500">© 2026 Le Software Solutions. All rights reserved.</p>
-          <div className="flex gap-6">
-            <a href="#" className="text-sm text-slate-500 hover:text-slate-300 transition-colors">Privacy Policy</a>
-            <a href="#" className="text-sm text-slate-500 hover:text-slate-300 transition-colors">Terms &amp; Conditions</a>
+          <div className="text-center sm:text-left">
+            <p className="text-sm text-slate-500">© 2025 Le Software Solutions. All rights reserved.</p>
+            <p className="text-xs text-slate-600 mt-0.5">Registered Sole Trader in the United Kingdom.</p>
+          </div>
+          <div className="flex flex-wrap justify-center gap-5">
+            <Link href="/privacy-policy" className="text-sm text-slate-500 hover:text-slate-300 transition-colors">Privacy Policy</Link>
+            <Link href="/terms-and-conditions" className="text-sm text-slate-500 hover:text-slate-300 transition-colors">Terms &amp; Conditions</Link>
+            <Link href="/refund-policy" className="text-sm text-slate-500 hover:text-slate-300 transition-colors">Refund Policy</Link>
           </div>
         </div>
       </div>
